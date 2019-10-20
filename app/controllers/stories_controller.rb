@@ -1,22 +1,24 @@
 class StoriesController < ApplicationController
+  protect_from_forgery
 
     def index 
-        stories = Story.all
-        render json: stories, except: [:created_at, :updated_at], include: :user
+        @stories = Story.all
+        render json: @stories, except: [:created_at, :updated_at], include: :user
     end
     
     
-    def new 
-      story = Story.new(stories_params)
-      if Story.save
-          render json: story, except: [:created_at, :updated_at]
-      else 
-          render json: { errors: story.errors } 
-      end
-    end 
+    # def new 
+    #   story = Story.new(stories_params)
+    #   if Story.save
+    #       render json: story, except: [:created_at, :updated_at]
+    #   else 
+    #       render json: { errors: story.errors } 
+    #   end
+    # end 
     
     
       def show
+        set_story
         render json: @story = Story.find(params[:id])
       end
     
@@ -57,6 +59,6 @@ class StoriesController < ApplicationController
       end
     
     def story_params
-        params.permit(:name)
+        params.permit(:questionOne, :questionTwo, :questionThree, :user_id, :story_id, :id)
     end
 end

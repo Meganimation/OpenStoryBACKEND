@@ -22,7 +22,9 @@ ActiveRecord::Schema.define(version: 2019_10_18_011102) do
   end
 
   create_table "stories", force: :cascade do |t|
-    t.string "description"
+    t.string "questionOne"
+    t.string "questionTwo"
+    t.string "questionThree"
     t.bigint "user_id"
     t.bigint "genre_id"
     t.datetime "created_at", null: false

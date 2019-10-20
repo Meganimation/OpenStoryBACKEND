@@ -6,9 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-testUser = (User.create(name: 'User')) #age? location, reason for logging in? 
+testUser = (User.create(name: 'User')) 
 testGenre = (Genre.create(name: 'Horror'))
-testStory = (Story.create(description: 'The End', user: testUser, genre: testGenre)) 
+testStory = (Story.create(questionOne: 'Cats', questionTwo: 'Laptops', questionThree: 'My Story', user: testUser, genre: testGenre)) 
+testStory1 = (Story.create(questionOne: 'Dogs', questionTwo: 'Laptops', questionThree: 'A Story', user: testUser, genre: testGenre)) 
 
 #const Storytt = one day you were walking through {this.state.location} when you saw {this.state.allUsers.name.random}, The end
 
