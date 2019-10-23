@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(version: 2019_10_18_011102) do
     t.string "questionOne"
     t.string "questionTwo"
     t.string "questionThree"
+    t.string "questionFour"
+    t.string "questionFive"
+    t.string "questionSix"
     t.bigint "user_id"
     t.bigint "genre_id"
     t.datetime "created_at", null: false

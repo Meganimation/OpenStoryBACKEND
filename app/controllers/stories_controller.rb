@@ -59,6 +59,6 @@ class StoriesController < ApplicationController
       end
     
     def story_params
-        params.permit(:questionOne, :questionTwo, :questionThree, :user_id, :story_id, :id)
+        params.permit(:questionOne, :questionTwo, :questionThree, :questionFour, :questionFive, :questionSix, :user_id, :story_id, :id)
     end
 end
