@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
     def index 
         users = User.all
-        render json: users, except: [:created_at, :updated_at], include: :stories, except: [:created_at, :updated_at]
+        render json: users, except: [:created_at, :updated_at], include: :stories
     end
     
     
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
       end
     
     def user_params
-        params.permit(:name)
+        params.permit(:name, :story_id)
     end
 
 end
